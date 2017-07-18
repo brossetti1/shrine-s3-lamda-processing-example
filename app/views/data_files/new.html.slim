@@ -3,6 +3,9 @@
     .row
       h2 File Data Form
     .row 
+      = f.label :document
+      = f.file_field :document
+    .row 
       = f.label :name
       = f.text_field :name
     .row 
@@ -12,4 +15,7 @@
           =content_tag(:option, name, value: name)
     .row 
       = f.submit
-
+  .data-files
+    ol
+      -DataFile.all.each do |data_file|
+        li=link_to "#{data_file.processor} #{data_file.name} #{data_file.document.metadata['filename']}", data_file.document.url
