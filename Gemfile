@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# gem "shrine"
+gem "shrine"
 gem "slim-rails"
 # gem "aws-sdk", "~> 2.1"
 

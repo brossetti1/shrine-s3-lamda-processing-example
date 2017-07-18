@@ -15,6 +15,6 @@ class DataFilesController < ApplicationController
   private
 
   def data_file_params
-    params.require(:data_file).permit(:name, :processor)
+    params.require(:data_file).permit(:name, :processor, :document)
   end
 end

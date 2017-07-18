@@ -3,6 +3,10 @@
     .row
       h2 File Data Form
     .row 
+      = f.hidden_field :document, value: @data_file.cached_document_data
+      = f.label :document
+      = f.file_field :document
+    .row 
       = f.label :name
       = f.text_field :name
     .row 
