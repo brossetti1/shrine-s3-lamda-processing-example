@@ -35,13 +35,22 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # gem "shrine"
 gem "slim-rails"
+# gem "aws-sdk", "~> 2.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'annotate'
+  gem 'awesome_print' # adds style to pry print out- we can remove this one if its too different for anyone
+  gem 'pry-rails' # Debugging
+  gem 'pry-byebug' # adds step, next, finish, continue, and breakpoint commands to pry
+  gem 'pry-rescue' # run your server with rescue to open pry on any error 'bundle exec rescue rails s'
+  gem 'pry-stack_explorer' #adds up, down, frame, and show-stack to pry commands
 end
 
 group :development do
@@ -51,6 +60,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'database_cleaner'
+  gem 'capybara-webkit'
+  gem 'simplecov', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

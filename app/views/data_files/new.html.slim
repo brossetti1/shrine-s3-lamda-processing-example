@@ -1,0 +1,15 @@
+.form-container
+  = form_for @data_file do |f|
+    .row
+      h2 File Data Form
+    .row 
+      = f.label :name
+      = f.text_field :name
+    .row 
+      = f.label "Processor"
+      = f.select :processor do 
+        -::Processors::NAMES.each do |name|
+          =content_tag(:option, name, value: name)
+    .row 
+      = f.submit
+
