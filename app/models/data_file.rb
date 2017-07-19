@@ -12,6 +12,8 @@
 
 class DataFile < ApplicationRecord
   # adds an `document` virtual attribute
-  include FileUploader::Attachment.new(:document)
+  include FileUploader[:document]
+
+  validates :document_data, presence: true
   
 end

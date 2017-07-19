@@ -34,9 +34,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "shrine"
+
+gem "shrine" #file uploads
 gem "slim-rails"
-# gem "aws-sdk", "~> 2.1"
+gem "aws-sdk", "~> 2.1" #s3 support for shrine
+gem "roda" #needed for direct-uploads to S3 with shrine
+
+# for Later:
+# gem "react_on_rails", "8.0.0"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
