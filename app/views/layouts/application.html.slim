@@ -9,8 +9,12 @@ html
   body
     .container
       section.header
-        =link_to "Register", new_user_registration_path
-        =link_to "Login", new_user_session_path
+        -if current_user
+          =link_to "Sign out", destroy_user_session_path, id: "sign_out", method: :delete
+        -else
+          =link_to "Register", new_user_registration_path
+          =link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, id: "sign_in"
+          =link_to "Login", new_user_session_path
       .flash
         p.notice= notice
         p.alert= alert

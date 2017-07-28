@@ -40,6 +40,7 @@ gem "slim-rails"
 gem "aws-sdk", "~> 2.1" #s3 support for shrine
 gem "roda" #needed for direct-uploads to S3 with shrine
 gem 'devise'
+gem 'omniauth-facebook'
 
 # for Later:
 # gem "react_on_rails", "8.0.0"
